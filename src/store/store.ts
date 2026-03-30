@@ -4,12 +4,13 @@ import { setupListeners } from "@reduxjs/toolkit/query"
 
 // * Импортируем заранее созданный counterSlice - кусочки
 import {counterSlice} from "store/redux/counterSlice/counterSlice";
+import {feedbackSlice} from "store/redux/feedbackSlice/feedbackSlice"
 // import {profileSlice}
-// import {feedBackSlice}
+
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
 // Функция combineSlices - идет из библитеки redax - это функция у нас собирает все кусочки и кладёт их в общее redax хранилище - куда класть в качестве аргументов
-const rootReducer = combineSlices(counterSlice)
+const rootReducer = combineSlices(counterSlice, feedbackSlice)
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>
 

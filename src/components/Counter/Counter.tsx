@@ -23,7 +23,7 @@ function Counter() {
   // Нам нужно за диспатчить action
   const onPlus = () => {
     // dispatch - принимает в качестве аргумента action а что у нас возвращает action - мы импрортировали из нашего counterSlice - counterSliceActions
-    // создаём action - есть action creator
+    // создаём action - тоесть action creator
     // почему plus - потомучто когда у нас создаються reducer на него сразу же создаются и action с таким же именем - как и reducer
     const action = counterSliceActions.plus()
     dispatch(action)
