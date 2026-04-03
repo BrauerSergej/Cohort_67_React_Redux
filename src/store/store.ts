@@ -1,4 +1,5 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
+// Импортировли из нашей библиотеки @reduxjs/toolkit - функцию configureStore - потомучто именно она создаёт глобальное Redux хранилище
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 
@@ -12,13 +13,18 @@ import {feedbackSlice} from "store/redux/feedbackSlice/feedbackSlice"
 // Функция combineSlices - идет из библитеки redax - это функция у нас собирает все кусочки и кладёт их в общее redax хранилище - куда класть в качестве аргументов
 const rootReducer = combineSlices(counterSlice, feedbackSlice)
 // Infer the `RootState` type from the root reducer
+// Чтобы нам получить тип нашего общего глобального хранилищя - создаётся такой type - возвращаемый тип из нашего rootReducer - в итоге появляется типизация нашего state
 export type RootState = ReturnType<typeof rootReducer>
 
 // The store setup is wrapped in `makeStore` to allow reuse
 // when setting up tests that need the same store config
+// По сути всё делает вот этот код - что такое prelodedState - это хранилище по умолчанию - оно у нас пустой объект
 export const makeStore = (preloadedState?: Partial<RootState>) => {
+  // Здесь мы создаём хранилище - store и мы как раз тут используем функцию configureStore из библиотеки @reduxjs/toolkit
+  // Функция configureStore - создаёт reduxstore
   const store = configureStore({
     reducer: rootReducer,
+    // Пустой объект
     preloadedState,
   })
   // configure listeners using the provided defaults
