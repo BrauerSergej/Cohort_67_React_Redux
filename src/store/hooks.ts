@@ -8,5 +8,7 @@ import { useDispatch, useSelector } from "react-redux"
 import type { AppDispatch, RootState } from "./store"
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
+// * Функция useAppDispatch нужна для того чтобы создовать функцию dispatch - функция которая доставляем action
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
+// * Функция useAppSelector - это функция которая позволяеет нам забрать данные со store
 export const useAppSelector = useSelector.withTypes<RootState>()
