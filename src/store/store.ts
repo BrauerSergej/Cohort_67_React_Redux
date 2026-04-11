@@ -4,15 +4,20 @@ import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 
 // * Импортируем заранее созданный counterSlice - кусочки
-import {counterSlice} from "store/redux/counterSlice/counterSlice";
-import {feedbackSlice} from "store/redux/feedbackSlice/feedbackSlice"
-import { employeeSlice } from "./redux/employeeSlice/employeesSlice";
-// import {profileSlice}
+import { counterSlice } from "store/redux/counterSlice/counterSlice"
+import { feedbackSlice } from "store/redux/feedbackSlice/feedbackSlice"
+import { employeeSlice } from "./redux/employeeSlice/employeesSlice"
+import { weatherSlice } from "lessons/Lesson_19_Project_Weather/redux/weatherSlice/weatherSlice"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
 // Функция combineSlices - идет из библитеки redax - это функция у нас собирает все кусочки и кладёт их в общее redax хранилище - куда класть в качестве аргументов
-const rootReducer = combineSlices(counterSlice, feedbackSlice, employeeSlice)
+const rootReducer = combineSlices(
+  counterSlice,
+  feedbackSlice,
+  employeeSlice,
+  weatherSlice,
+)
 // Infer the `RootState` type from the root reducer
 // Чтобы нам получить тип нашего общего глобального хранилищя - создаётся такой type - возвращаемый тип из нашего rootReducer - в итоге появляется типизация нашего state
 export type RootState = ReturnType<typeof rootReducer>
