@@ -9,6 +9,7 @@ const globalAppStyles = css`
   body {
     height: 100%;
     margin: 0;
+    font-family: "Inter", sans-serif;
   }
 
   h1,
@@ -28,7 +29,7 @@ const globalAppStyles = css`
     flex-direction: column;
     min-height: 100%;
   }
-`;
+`
 
 function GlobalStyles() {
   return <Global styles={globalAppStyles} />;
