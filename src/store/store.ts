@@ -7,7 +7,7 @@ import { setupListeners } from "@reduxjs/toolkit/query"
 import { counterSlice } from "store/redux/counterSlice/counterSlice"
 import { feedbackSlice } from "store/redux/feedbackSlice/feedbackSlice"
 import { employeeSlice } from "./redux/employeeSlice/employeesSlice"
-import { weatherSlice } from "lessons/Lesson_19_Project_Weather/redux/weatherSlice/weatherSlice"
+import { weatherSlice } from "homeworks/Weather_Project/redux/weatherSlice/weatherSlice"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.

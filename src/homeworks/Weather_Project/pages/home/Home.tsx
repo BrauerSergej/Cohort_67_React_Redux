@@ -1,5 +1,5 @@
 import { HomeWrapper } from "./styles"
-import Spinner from "lessons/Lesson_19_Project_Weather/components/Spinner/Spinner"
+import Spinner from "homeworks/Weather_Project/components/Spinner/Spinner"
 import SearchForm from "../../components/searchForm/SearchForm"
 import { useAppDispatch, useAppSelector } from "store/hooks"
 import {

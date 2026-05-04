@@ -5,12 +5,13 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 // import { ROUTES } from "./lessons/Lesson_18_Employee_Project/components/routesthighttech"
 import { Provider } from "react-redux"
 import { store } from "store/store"
-import { ROUTES } from "lessons/Lesson_19_Project_Weather/routes/routes"
-import Layout from "lessons/Lesson_19_Project_Weather/components/layout/Layout"
-import Home from "lessons/Lesson_19_Project_Weather/pages/home/Home"
-import Weather from "lessons/Lesson_19_Project_Weather/pages/weather/Weather"
+import { ROUTES } from "homeworks/Weather_Project/routes/routes"
+import Layout from "homeworks/Weather_Project/components/layout/Layout"
+import Home from "homeworks/Weather_Project/pages/home/Home"
+import Weather from "homeworks/Weather_Project/pages/weather/Weather"
 // import Homework_17 from "homeworks/homework_17/Homework_17"
 import GlobalStyles from "styles/GlobalStyles"
+
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
     //     </Layout>
     //   </Provider>
     // </BrowserRouter>
-
+    // <RenderInput/>
+    // <InputRef/>
     <BrowserRouter>
       <GlobalStyles />
       <Provider store={store}>
